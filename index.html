@@ -535,6 +535,7 @@
         eventArgs.preventDefault();
         const tunicChar = TunicChar.fromDOM(document.getElementById('tunicCharEditor'));
         const tunicCharElement = TunicCharDOMElement.create(false, 'smallTunicChar');
+        tunicChar.toDOM(tunicCharElement);
         if (document.activeElement != tunicText) {
             tunicText.focus();
         }

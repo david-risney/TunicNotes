@@ -1,105 +1,110 @@
 <html class="noTouch borderless fill hateSerifs">
-    <style>
-        .tunicChar *[data-part-state='set'] {
-            fill: rgba(0, 0, 0, 1);
-        }
-        .tunicChar *[data-part-state='mask'], .tunicChar *[data-part-state='unset'] {
-            fill: rgba(0, 0, 0, 0);
-        }
+    <head>
+        <title>Tunic Notes</title>
+        <link rel="shortcut icon" href="favicon.png"/>
+        <style>
+            .tunicChar *[data-part-state='set'] {
+                fill: rgba(0, 0, 0, 1);
+            }
+            .tunicChar *[data-part-state='mask'], .tunicChar *[data-part-state='unset'] {
+                fill: rgba(0, 0, 0, 0);
+            }
 
-        .tunicChar.editable *[data-part-state='unset'] {
-            fill: rgba(0, 0, 0, 0.1);
-        }
-        .tunicChar.editable *[data-part-state='mask'] {
-            fill: rgba(255, 0, 0, 0.1);
-        }
+            .tunicChar.editable *[data-part-state='unset'] {
+                fill: rgba(0, 0, 0, 0.1);
+            }
+            .tunicChar.editable *[data-part-state='mask'] {
+                fill: rgba(255, 0, 0, 0.1);
+            }
 
-        .tunicChar[data-kind='space'] * {
-            display: none;
-        }
+            .tunicChar[data-kind='space'] * {
+                display: none;
+            }
 
-        .hateSerifs { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif }
-        .highlightable { border: 2px transparent solid; }
-        .tunicChar.highlighted { border: 2px gold solid; }
+            .hateSerifs { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif }
+            .highlightable { border: 2px transparent solid; }
+            .tunicChar.highlighted { border: 2px gold solid; }
 
-        .fill {
-            width: 100%;
-            height: 100%;
-        }
+            .fill {
+                width: 100%;
+                height: 100%;
+            }
 
-        .borderless {
-            border: 0;
-            padding: 0;
-            margin: 0;
-        }
+            .borderless {
+                border: 0;
+                padding: 0;
+                margin: 0;
+            }
 
-        .noTouch {
-            touch-action: none;
-        }
+            .noTouch {
+                touch-action: none;
+            }
 
-        .bigButton {
-            font-size: 50px;
-            padding: 20px;
-        }
+            .bigButton {
+                font-size: 50px;
+                padding: 20px;
+            }
 
-        .bigTunicChar {
-            width: calc(300px * 0.6);
-            height: calc(650px * 0.6);
-        }
+            .bigTunicChar {
+                width: calc(300px * 0.6);
+                height: calc(650px * 0.6);
+            }
 
-        .smallTunicChar {
-            width: calc(300px * 0.10);
-            height: calc(650px * 0.10);
-        }
+            .smallTunicChar {
+                width: calc(300px * 0.10);
+                height: calc(650px * 0.10);
+            }
 
-        .keyTunicChar {
-            width: calc(300px * 0.15);
-            height: calc(650px * 0.15);
-            border: lightgray 2px solid;
-            padding: 2px;
-        }
+            .keyTunicChar {
+                width: calc(300px * 0.15);
+                height: calc(650px * 0.15);
+                border: lightgray 2px solid;
+                padding: 2px;
+            }
 
-        #Add {
-            display: none;
-        }
-    </style>
+            #Add {
+                display: none;
+            }
+        </style>
+    </head>
     <body class="borderless fill">
     <div style="display: flex; flex-direction: row; flex-basis: 0%;">
         <div>
             <div id="KeysVowels" style="padding-left: 20px;"></div>
         </div>
         <div style="padding: 0px 50px 0px 50px;">
-            <h1 class="borderless">Tunic Language</h1>
-            <svg id="tunicCharEditor" class="tunicChar editable bigTunicChar" width="300" height="650" viewBox="0 0 300 650" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+            <h1 class="borderless">Tunic Notes</h1>
                 <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit -->
+                <!-- Old rects I eventually figured out were unnecessary or duplicate -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_5" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="130"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_6" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(1 0 0 1 0 0)" width="20" x="0" y="0"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_11" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="0" y="470"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_10" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="470"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_9" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="0" y="340"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_21" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 219 70)" width="20" x="209" y="-25"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_23" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="-27.3" y="189.09"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_25" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="232.79" y="-211.91"/ -->
+                <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_32" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 79 532)" width="20" x="69" y="437"/ -->
+            <svg id="tunicCharEditor" class="tunicChar editable bigTunicChar" width="300" height="650" viewBox="0 0 300 650" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <g class="layer">
-                 <title>Layer 1</title>
-                 <rect    class="optional"           fill="rgba(0, 0, 0, 1)" height="20" data-part-id="svg_1" data-part-state="set" stroke="rgba(0, 0, 0, 1)" width="300" x="0" y="290"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="340" data-part-id="svg_4" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="0" y="130"/>
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_5" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="130"/ -->
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_6" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(1 0 0 1 0 0)" width="20" x="0" y="0"/ -->
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="260" data-part-id="svg_7" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="0"/>
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_11" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="0" y="470"/ -->
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_10" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="470"/ -->
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="130" data-part-id="svg_9" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="0" y="340"/ -->
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="260" data-part-id="svg_8" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="340"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_17" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 80 65)" width="20" x="70" y="-30"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_18" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="71" y="104"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_19" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 220 194)" width="20" x="210" y="99"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_20" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="-115.88" y="81.97"/>
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_21" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 219 70)" width="20" x="209" y="-25"/ -->
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_22" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 79 188)" width="20" x="69" y="93"/>
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_23" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="-27.3" y="189.09"/ -->
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_24" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="-26.77" y="4.59"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_28" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 219 532)" width="20" x="209" y="437"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_27" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="143.68" y="-134.52"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_26" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 218 408)" width="20" x="208" y="313"/>
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_25" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="232.79" y="-211.91"/ -->
-                 <!-- rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_32" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 79 532)" width="20" x="69" y="437"/ -->
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_31" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="233.67" y="-27.28"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_30" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 78 408)" width="20" x="68" y="313"/>
-                 <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_29" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="322.78" y="-104.66"/>
-                 <ellipse class="optional clickable" fill="rgba(0, 0, 0, 0)" data-part-id="svg_33" rx="30" ry="30" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" cx="150" cy="620" />
+                    <title>Layer 1</title>
+                    <rect    class="optional"           fill="rgba(0, 0, 0, 1)" height="20" data-part-id="svg_1" data-part-state="set" stroke="rgba(0, 0, 0, 1)" width="300" x="0" y="290"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="340" data-part-id="svg_4" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="0" y="130"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="260" data-part-id="svg_7" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="0"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="260" data-part-id="svg_8" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" width="20" x="140" y="340"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_17" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 80 65)" width="20" x="70" y="-30"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_18" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="71" y="104"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_19" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 220 194)" width="20" x="210" y="99"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_20" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="-115.88" y="81.97"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_22" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 79 188)" width="20" x="69" y="93"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_24" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="-26.77" y="4.59"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_28" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 219 532)" width="20" x="209" y="437"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_27" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="143.68" y="-134.52"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_26" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 218 408)" width="20" x="208" y="313"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_31" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="233.67" y="-27.28"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_30" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="rotate(-130 78 408)" width="20" x="68" y="313"/>
+                    <rect    class="optional clickable" fill="rgba(0, 0, 0, 0)" height="190" data-part-id="svg_29" rx="0" ry="0" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" transform="matrix(-0.642788 0.766044 -0.766044 -0.642788 285.509 264.865)" width="20" x="322.78" y="-104.66"/>
+                    <ellipse class="optional clickable" fill="rgba(0, 0, 0, 0)" data-part-id="svg_33" rx="30" ry="30" data-part-state="unset" stroke="rgba(0, 0, 0, 0)" cx="150" cy="620" />
                 </g>
             </svg>
         </div>
